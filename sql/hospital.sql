@@ -1,4 +1,3 @@
-CREATE SCHEMA hospital;
 
 CREATE TABLE clientes(
 
@@ -8,7 +7,7 @@ telefone VARCHAR(20) NOT NULL,
 email VARCHAR(100),
 cpf VARCHAR(11) NOT NULL
 );
-INSERT INTO cliente(nome, telefone, email, cpf)
+INSERT INTO clientes(nome, telefone, email, cpf)
 VALUES (?, ?, ?, ?);
 
 CREATE TABLE funcionarios(
@@ -23,13 +22,13 @@ VALUES (?, ?, ?, ?);
 
 CREATE TABLE agendamento(
 id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
-id_client INT NOT NULL,
+id_clientes INT NOT NULL,
 id_funcionario INT NOT NULL,
 data_horai DATETIME NOT NULL,
 data_horaf DATETIME NOT NULL,
 status ENUM('Aprovado', 'Cancelado', 'Em andamento', 'Disponível') NOT NULL,
 
-CONSTRAINT fk_cliente FOREIGN KEY (id_cliente)
+CONSTRAINT fk_clientes FOREIGN KEY (id_cliente)
 REFERENCES clientes(id_cliente),
 
 CONSTRAINT fk_funcionarios FOREIGN KEY (id_funcionario)
@@ -37,5 +36,13 @@ REFERENCES funcionarios(id_funcionario)
 );
 
 CREATE TABLE historico(
-id_historico INT PRIMARY KEY AUTO_INCREMENT
+id_historico INT PRIMARY KEY AUTO_INCREMENT,
+id_cliente INT NOT NULL,
+id_funcionario INT NOT NULL,
+
+CONSTRAINT fk_cliente FOREIGN KEY (id_cliente)
+REFERENCES clientes(id_cliente),
+
+CONSTRAINT fk_funcionarios FOREIGN KEY (id_funcionario)
+REFERENCES funcionarios(id_funcionario)
 );
