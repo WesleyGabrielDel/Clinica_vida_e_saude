@@ -1,0 +1,17 @@
+main {
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sect-employees {
+    width: min(1100px, 90%);
+    min-height: 650px;
+    border: 1px solid rgba(35, 76, 59, 0.5);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 12px 28px rgba(35, 76, 59, 0.08);
+    margin: 0 auto;
+}
