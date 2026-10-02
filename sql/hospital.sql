@@ -21,12 +21,12 @@ INSERT INTO funcionarios(nome, capacitacao, cpf, telefone)
 VALUES (?, ?, ?, ?);
 
 CREATE TABLE agendamento(
-id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
+id_agendamento INT PRIMARY KEY AUTO_INCREMENT UNIQUE,
 id_clientes INT NOT NULL,
 id_funcionario INT NOT NULL,
-data_horai DATETIME NOT NULL,
-data_horaf DATETIME NOT NULL,
-status ENUM('Aprovado', 'Cancelado', 'Em andamento', 'Disponível') NOT NULL,
+data_horai DATETIME NOT NULL UNIQUE,
+data_horaf DATETIME NOT NULL UNIQUE,
+status ENUM('Aprovado', 'Cancelado', 'Em andamento', 'Disponível') NOT NULL UNIQUE,
 
 CONSTRAINT fk_clientes FOREIGN KEY (id_cliente)
 REFERENCES clientes(id_cliente),
