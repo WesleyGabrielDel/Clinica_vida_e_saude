@@ -1,4 +1,4 @@
 <?php
 
-header("Location: ./public/home.html");
+header("Location: ./public/agendamentos.html");
 exit;
