@@ -3,11 +3,9 @@ import {SOURCE_DIR, request} from "./lib/utils.js";
 document.addEventListener("DOMContentLoaded", async () => {
     const main_table = document.querySelector(".main-table");
 
-    const response = await request(`${SOURCE_DIR}/services/registros.php`, {
+    const agendamentos = await request(`${SOURCE_DIR}/services/registros.php`, {
         tipo: "agendamentos"
     }, "POST");
-
-    const agendamentos = JSON.parse(response); // Arrumando o formato da resposta pra ficar em array    
 
     const fields = ["p_nome", "f_nome", "horario", "data", "status"] // Campos dos registros
     const columns = {};

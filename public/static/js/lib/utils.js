@@ -13,7 +13,7 @@ export async function request(url, data = null, method = "GET") {
         });
 
         // retorna a resposta da requisição
-        return await r.text();
+        return await r.json();
     } 
 
     catch (error) {
