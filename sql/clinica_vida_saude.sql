@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 06/10/2026 às 02:04
+-- Tempo de geração: 06/10/2026 às 02:36
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,8 @@ CREATE TABLE `agendamentos` (
 
 INSERT INTO `agendamentos` (`id_agendamento`, `id_cliente`, `id_funcionario`, `horario`, `data`, `status`) VALUES
 (5, 2, 5, '21:30:00', '2026-10-28', 'Agendada'),
-(6, 3, 5, '10:20:00', '2026-11-24', 'Cancelada');
+(6, 3, 5, '10:20:00', '2026-11-24', 'Cancelada'),
+(7, 6, 9, '12:45:00', '2026-10-24', 'Agendada');
 
 -- --------------------------------------------------------
 
@@ -63,9 +64,11 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `capacitacao`, `cpf`, `telefone`) VALUES
-(5, 'Bruno dos Campos', 'cardiologia', '12300657111', '41992467854'),
-(6, 'Bruna das Cidades', 'pediatria', '11175600321', '45876429914'),
-(7, 'Lucas do Agro', 'dermatologia', '20864137952', '41999990000');
+(5, 'Bruno dos Campos', 'cardiologia', '52998224725', '(41) 9939-9291'),
+(6, 'Bruna das Cidades', 'pediatria', '11144477735', '(41) 9959-6994'),
+(7, 'Lucas do Agro', 'dermatologia', '39053344705', '(41) 9799-5996'),
+(8, 'Maria dos Santos', 'ginecologia', '24895731219', '(41) 9992-9949'),
+(9, 'Emanuel Santos', 'clinica-geral', '98765432100', ' (41) 9887-4321');
 
 -- --------------------------------------------------------
 
@@ -86,9 +89,11 @@ CREATE TABLE `pacientes` (
 --
 
 INSERT INTO `pacientes` (`id_cliente`, `nome`, `telefone`, `email`, `cpf`) VALUES
-(2, 'Marselo Sem C com S', '4199674238', 'marselocs@yahoo.com', '00064675767'),
-(3, 'Sandra dos Reis', '41991234567', 'sandra@gmail.com', '08462719943'),
-(4, 'José Mané', '4127086988', 'manejose@outlook.com', '45928173040');
+(2, 'Marselo Sem C com S', '(41) 9887-4321', 'marselocs@yahoo.com', '14982763090'),
+(3, 'Sandra dos Reis', '(41) 9765-2189', 'sandra@gmail.com', '93541134780'),
+(4, 'José Mané', '(41) 9912-6743', 'manejose@outlook.com', '71484631060'),
+(5, 'Daniel da Silva', '(41) 9843-9056', 'daniel@gmail.com', '86524751030'),
+(6, 'Maria Gomes', '(41) 9887-4321', 'maria@gmail.com', '12345678909');
 
 --
 -- Índices para tabelas despejadas
@@ -122,19 +127,19 @@ ALTER TABLE `pacientes`
 -- AUTO_INCREMENT de tabela `agendamentos`
 --
 ALTER TABLE `agendamentos`
-  MODIFY `id_agendamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_agendamento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `pacientes`
 --
 ALTER TABLE `pacientes`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para tabelas despejadas
